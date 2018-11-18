@@ -1,0 +1,12 @@
+{
+  "name": "mycodemods",
+  "version": "1.0.0",
+  "description": "JS codemods",
+  "main": "index.js",
+  "repository": "git@github.com:yannvr/codemods.git",
+  "author": "Yann VR <yannvr@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "ast-types": "^0.11.6"
+  }
+}
