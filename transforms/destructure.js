@@ -205,7 +205,7 @@ module.exports = function (file, api) {
 
             // Otherwise, we'll have to create our own, as none were suitable for use.
             // Create the variable definition `const { xyz } = this.state;`
-            const decl = statement`const { ${properties} } = this.state`;
+            const decl = statement`const { ${properties} } = this.state\n`;
 
             // Add the variable definition to the top of the function expression body.
             console.log('p.value', p.value)
@@ -214,7 +214,7 @@ module.exports = function (file, api) {
                 p.value.params,
                 //j.variableDeclaration("const", properties.concat(p.value.body.body)),
                 //j.variableDeclarator('wer', node.init)
-                j.blockStatement([...decl].concat(p.value.body.body)),
+                j.blockStatement([decl].concat(p.value.body.body)),
             );
         })
         .toSource();

@@ -17,7 +17,6 @@ class C extends React.Component {
     }
 
     getAllState() {
-        const { x, y } = prap
         return this.state.a + this.state.b
     }
 

@@ -130,7 +130,7 @@ module.exports = function (file, api) {
       return j.functionExpression(
         p.value.id,
         p.value.params,
-        j.blockStatement([decl].concat(p.value.body.body))
+        j.blockStatement([...decl].concat(p.value.body.body))
       );
     }
   ).toSource();
