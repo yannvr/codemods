@@ -68,7 +68,7 @@ class SimpleSnackbar extends React.Component {
       classes, autoHideDuration, anchorOriginVertical, variant,
     } = this.props
 
-    const { open, message } = this.state
+    // const {  message } = this.state
 
     // const {  } = this.state
 
@@ -83,7 +83,7 @@ class SimpleSnackbar extends React.Component {
             horizontal: 'center',
           }}
           classes={{ root: classes.root }}
-          open={open}
+          open={this.state.open}
           onClose={this.handleClose}
           autoHideDuration={autoHideDuration}
           // onExit={this.handleOnExit}
@@ -92,7 +92,7 @@ class SimpleSnackbar extends React.Component {
             className         : classes[variant],
           }}
           message={
-            this.getMessage(classes, message, variant)
+            this.getMessage(classes, this.state.message, variant)
           }
         />
       </div>
