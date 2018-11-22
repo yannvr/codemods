@@ -6,10 +6,18 @@ const MyComponent = props => {
     return <div id={props.id} />;
 };
 
+function test(props) {
+    return props.id
+}
+
 class C extends React.Component {
 
     getA() {
         return this.props.a
+    }
+
+    test(props) {
+        return props.id
     }
 
     getAll() {

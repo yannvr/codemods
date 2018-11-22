@@ -1,20 +1,25 @@
 {
-  "name": "mycodemods",
+  "name": "jscodemods",
   "version": "1.0.0",
   "description": "JS codemods",
   "main": "index.js",
   "repository": "git@github.com:yannvr/codemods.git",
   "author": "Yann VR <yannvr@gmail.com>",
-  "license": "MIT",
+  "license": "wtfpl",
   "dependencies": {
-    "ast-types": "^0.11.6",
-    "global": "^4.3.2",
-    "jscodeshift": "^0.5.1",
-    "prettier": "^1.15.2"
+    "jest": "^23.6.0",
+    "jscodeshift": "^0.5.1"
   },
-  "devDependencies": {
-    "eslint": "^5.9.0",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.14.0"
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "globals": {
+      "baseDir": "../"
+    },
+    "testEnvironment": "node",
+    "roots": [
+      "transforms"
+    ]
   }
 }
