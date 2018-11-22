@@ -208,7 +208,6 @@ module.exports = function (file, api) {
             const decl = statement`const { ${properties} } = this.state\n`;
 
             // Add the variable definition to the top of the function expression body.
-            console.log('p.value', p.value)
             return j.functionExpression(
                 p.value.id,
                 p.value.params,
@@ -217,5 +216,5 @@ module.exports = function (file, api) {
                 j.blockStatement([decl].concat(p.value.body.body)),
             );
         })
-        .toSource();
+        .toSource(({ quote: 'single', trailingComma: true }));
 };
