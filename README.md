@@ -9,3 +9,6 @@ Useful links:
 - https://github.com/benjamn/ast-types
 - https://github.com/sejoker/awesome-jscodeshift
 - https://github.com/estree/estree ?
+- https://www.toptal.com/javascript/write-code-to-rewrite-your-code
+- https://github.com/benjamn/ast-types/blob/master/def/core.js
+- https://github.com/jhgg/js-transforms
