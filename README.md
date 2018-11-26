@@ -1,17 +1,14 @@
-Small mashup of useful little codemods
-TODO:
-- A sensible object destructuring mod like
-`https://github.com/thibaudcolas/react-destructuring-assignment-codemod`
-- granular logs
-- streamline arrow function with a single return statement
+Collection of useful transformations
 
-Useful links:
-- https://github.com/babel/babel/blob/master/packages/babel-parser/ast/spec.md
-- https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey/Parser_API
-- https://github.com/facebook/jsx/blob/master/AST.md
-- https://github.com/benjamn/ast-types
-- https://github.com/sejoker/awesome-jscodeshift
-- https://github.com/estree/estree ?
-- https://www.toptal.com/javascript/write-code-to-rewrite-your-code
-- https://github.com/benjamn/ast-types/blob/master/def/core.js
-- https://github.com/jhgg/js-transforms
+code cleanup
+- `remove-logs`: remove console call expressions except error ones
+- `remove-dbugger`: remove debugger statement
+
+code refactoring
+
+- `destructure-components`: destructure components state and props if they have more than one occurence
+- `destructure-functions`: destructure functions `props` and `state` params. Takes the following arguments:
+  - `--decl=1`: for function declaration (outside classes)
+  - `--state=1`: to destructure the property `state` rather than props
+  - `--arrow=1`: target arrow function for destructuring
+See `transforms/__tests_/destructure-functions.test.js` for examples
