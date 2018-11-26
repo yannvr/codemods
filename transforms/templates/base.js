@@ -1,11 +1,14 @@
 /**
  *  Empty to transformer boilerplate
  */
-export default (fileInfo, api) => {
+module.exports = function (fileInfo, api) {
   const j = api.jscodeshift
   const root = j(fileInfo.source)
 
-  return root.toSource()
-}
+  return root
+    .find(j.Expression, {
 
-const { a, b, c } = test
+    })
+    .forEach(p => console.log(p.value))
+    .toSource()
+}
