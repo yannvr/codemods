@@ -1,7 +1,7 @@
 // See https://prettier.io/docs/en/options.html.
 module.exports = {
   printWidth: 120,
-  tabWidth: 2,
+  tabWidth: 4,
   useTabs: false,
   semi: false,
   singleQuote: false,
@@ -9,5 +9,4 @@ module.exports = {
   bracketSpacing: true,
   jsxBracketSameLine: false,
   arrowParens: "avoid",
-  proseWrap: "preserve",
 };
