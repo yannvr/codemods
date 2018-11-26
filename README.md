@@ -1,10 +1,10 @@
-Collection of useful transformations
+### Collection of useful transformations
 
-code cleanup
+#### code cleanup
 - `remove-logs`: remove console call expressions except error ones
 - `remove-dbugger`: remove debugger statement
 
-code refactoring
+#### code refactoring
 
 - `destructure-components`: destructure components state and props if they have more than one occurence
 - `destructure-functions`: destructure functions `props` and `state` params. Takes the following arguments:
