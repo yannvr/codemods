@@ -13,11 +13,9 @@ A more maintanable code is a better code. That is the motivation. Simply run `tr
 
 #### code refactoring
 
-- `destructure-components`: destructure components state and props if they have more than one occurence
+- `destructure-components`: 
 Finally an auto fix for `react/destructuring-assignment` rule! Not a silver bullet but should make linter happier
-and code easier to read.
-It will destructure any props or state passed as the single function parameters expect if the props is used only once.
-The goal is to make the code more maintainable.
+and code easier to read. It will destructure any props or state passed as the single function parameters expect if the props is used only once.
 - `destructure-functions`: destructure functions `props` and `state` params. Takes the following arguments:
   - `--decl=1`: for function declaration (outside classes)
   - `--state=1`: to destructure the property `state` rather than props
