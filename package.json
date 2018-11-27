@@ -1,14 +1,16 @@
 {
   "name": "jscodemods",
   "version": "1.0.0",
-  "description": "JS codemods",
+  "description": "JS/React transforms because life is too short",
   "main": "index.js",
   "repository": "git@github.com:yannvr/codemods.git",
   "author": "Yann VR <yannvr@gmail.com>",
   "license": "wtfpl",
   "dependencies": {
-    "jest": "^23.6.0",
     "jscodeshift": "^0.5.1"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0"
   },
   "scripts": {
     "test": "jest"
