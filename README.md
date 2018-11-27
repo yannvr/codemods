@@ -12,3 +12,13 @@
   - `--state=1`: to destructure the property `state` rather than props
   - `--arrow=1`: target arrow function for destructuring. Works only if no extra parentheses are used on function paramaters.
 See `transforms/__tests_/destructure-functions.test.js` for examples
+
+#### Holistic transformation
+- Apply all transformations! `npm run transform pathToFile [pathToEslintConfig]`
+
+Takes the file to apply all transformations to and the eslint config of your project.
+Specifying your eslint config is highly recommended since transformed code will probably not match expected coding style. Note that
+packages required will need to be installed globally.
+
+#### TODO
+- More tests for `destructure-components` so it can handle larger project migration

@@ -13,6 +13,8 @@
     "jest": "^23.6.0"
   },
   "scripts": {
+    "transform": "./scripts/transform.sh",
+    "test:transform": "./scripts/test.sh",
     "test": "jest"
   },
   "jest": {
