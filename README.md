@@ -2,7 +2,7 @@
 Don't let those leftover debug statements in your PR make you look unprofessional or let the linter break your balls again 
 with some destructuring warnings. Here is a collection of codemods to stop you getting RSI doing boring things.
 
-A more maintanable code is a better code. That is the motivation. Simply run `transform` using your eslint config to get 
+A more maintainable code is a better code. That is the motivation. Simply run [transform](https://github.com/yannvr/codemods#holistic-transformation) using your eslint config to have 
  your code good to go.
  
 ### Transformations
