@@ -1,30 +1,5 @@
-/**
- *  Copyright (c) 2016-present, Facebook, Inc.
- *  All rights reserved.
- *
- *  This source code is licensed under the BSD-style license found in the
- *  LICENSE file in the root directory of this source tree. An additional grant
- *  of patent rights can be found in the PATENTS file in the same directory.
- */
-
-/**
- * An example of writing a unit test for a jscodeshift script using the
- * `defineTest` helper bundled with jscodeshift. This will run the
- * reverse-identifiers.js transform with the input specified in the
- * reverse-identifiers-input file, and expect the output to be the same as that
- * in reverse-identifiers-output.
- */
-
-'use strict';
-
-jest.autoMockOff();
-const defineTest = require('jscodeshift/dist/testUtils').defineTest;
 const defineInlineTest = require('jscodeshift/dist/testUtils').defineInlineTest;
 const transform = require('../destructure-functions');
-
-// defineTest(__dirname, 'destructure-functions');
-// defineTest(__dirname, 'destructure-functions', options, testFilePrefix);
-// defineTest(__dirname, 'destructure-functions', options, testFilePrefix);
 
 describe('destructure-functions', () => {
   defineInlineTest(transform, {}, `
@@ -64,10 +39,10 @@ class C {
 
 describe('destructure-functions', () => {
     defineInlineTest(transform, {arrow: 1}, `
-const test = (props) => props.id
-const test = (props) => <div id={props.id} />
+const test = props => props.id
+const test = props => <div id={props.id} />
 class C {
-    test1 = (props) => props.id
+    test1 = props => props.id
 }
   `,
         `
@@ -82,9 +57,9 @@ class C {
 
 describe('destructure-functions', () => {
     defineInlineTest(transform, {arrow: 1, state: 1}, `
-const test = (state) => state.id
+const test = state => state.id
 class C {
-    test1 = (state) => state.id
+    test1 = state => state.id
 }
   `,
         `
@@ -127,10 +102,10 @@ describe('destructure-functions', () => {
 
 describe('destructure-functions', () => {
     defineInlineTest(transform, {arrow: 1}, `
-    const test1 = (props) => props.id
+    const test1 = props => props.id + props.name
   `,
         `
-    const test1 = ({ id }) => id
+    const test1 = ({ id, name }) => id + name
       `,
         'Function type: Function Arrow Expression, prop name: props');
 });

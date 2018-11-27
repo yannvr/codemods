@@ -52,7 +52,13 @@ module.exports = function(file, api, options) {
         propToReplace.name.push(p.value.property.name)
         j(p).replaceWith(j.identifier(p.value.property.name))
       })
-    propToReplace.name = `{ ${propToReplace.name.join(", ")} }`
+
+    // TODO: Handle case where extra parentheses are present
+    if (options.arrow) {
+      propToReplace.name = `({ ${propToReplace.name.join(", ")} })`
+    } else {
+      propToReplace.name = `{ ${propToReplace.name.join(", ")} }`
+    }
   }
 
   return root
