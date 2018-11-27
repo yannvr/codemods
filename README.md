@@ -14,7 +14,8 @@ A more maintanable code is a better code. That is the motivation. Simply run `tr
 #### code refactoring
 
 - `destructure-components`: destructure components state and props if they have more than one occurence
-Finally an auto fix for `react/destructuring-assignment` rule :)
+Finally an auto fix for `react/destructuring-assignment` rule! Not a silver bullet but should make linter happier
+and code easier to read.
 It will destructure any props or state passed as the single function parameters expect if the props is used only once.
 The goal is to make the code more maintainable.
 - `destructure-functions`: destructure functions `props` and `state` params. Takes the following arguments:
@@ -24,7 +25,7 @@ The goal is to make the code more maintainable.
 See `transforms/__tests_/destructure-functions.test.js` for examples
 
 #### Holistic transformation
-- Apply all transformations! `npm run transform pathToFile [pathToEslintConfig]`
+- Apply all transformations! `yarn transform pathToFile [pathToEslintConfig]`
 
 Takes the file to apply all transformations to and the eslint config of your project.
 Specifying your eslint config is highly recommended since transformed code will probably not match expected coding style. Note that
