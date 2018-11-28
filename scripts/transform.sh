@@ -9,6 +9,7 @@ TRANSFORM_DIR="${DIR}/../transforms"
 
 if [ -z ${FILE} ]; then
     echo "error: enter filename to transform"
+    #for f in `git diff --name-only`; do echo $f--; done
     exit 1
 fi
 
