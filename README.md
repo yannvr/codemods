@@ -18,7 +18,6 @@ A more maintainable code is a better code. That is the motivation. Simply run [t
 Finally an auto fix for `react/destructuring-assignment` rule! Not a silver bullet but should make linter happier
 and code easier to read. It will destructure any props or state passed as the single function parameters expect if the props is used only once.
 - `destructure-functions`: destructure functions `props` and `state` params. Takes the following arguments:
-  - `--decl=1`: for function declaration (outside classes)
   - `--state=1`: to destructure the property `state` rather than props
   - `--arrow=1`: target arrow function for destructuring. Works only if no extra parentheses are used on function paramaters.
 See `transforms/__tests_/destructure-functions.test.js` for examples
