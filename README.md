@@ -1,5 +1,5 @@
 ### JS/React transformations 
-Don't let those leftover debug statements in your PR make you look unprofessional or let the linter break your balls again 
+Don't let those leftover debug statements in your PR make you look a bozo or let the linter break your balls again 
 with some destructuring warnings. Here is a collection of codemods to stop you getting RSI doing boring things.
 
 A more maintainable code is a better code. That is the motivation. Simply run [transform](https://github.com/yannvr/codemods#holistic-transformation) using your eslint config to have 
@@ -10,6 +10,7 @@ A more maintainable code is a better code. That is the motivation. Simply run [t
 #### code cleanup
 - `remove-logs`: remove console call expressions except error ones
 - `remove-dbugger`: remove debugger statement
+- `no-unused-vars`: remove unused variables in function parameters and block statements
 
 #### code refactoring
 
@@ -32,6 +33,7 @@ packages required will need to be installed globally.
 #### TODO
 - More tests for `destructure-components` so it can handle larger project migration
 - Make `destructure-components` safer (but still useful)
+- Remove unused arguments
 - Make a tranformation that makes the code bug free
 - Reclaim your life by making more useful transforms and be happy
 - Don't be that guy:

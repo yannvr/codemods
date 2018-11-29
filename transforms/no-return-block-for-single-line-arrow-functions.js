@@ -12,6 +12,6 @@ export default (fileInfo, api) => {
       },
     })
     .filter(p => p.value.body.body.length === 1)
-    .forEach(p => p.value.body = p.value.body.body[0].argument)
+    .forEach(p => (p.value.body = p.value.body.body[0].argument))
     .toSource()
 }

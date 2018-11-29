@@ -1,3 +1,3 @@
 const defineTest = require("jscodeshift/dist/testUtils").defineTest
 
-defineTest(__dirname, "destructure-components")
+defineTest(__dirname, "no-unused-vars-in-blocks")
