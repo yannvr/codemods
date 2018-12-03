@@ -7,9 +7,17 @@ HAS_JSCODESHIT=0
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 TRANSFORM_DIR="${DIR}/../transforms"
 
+ls transforms
+if [ ! -z $? ]; then
+    TRANSFORM_DIR="./node_modules/jscodemods/transforms"
+fi
+
+echo "TRANSFORM_DIR ${TRANSFORM_DIR}"
+
 if [ -z ${FILE} ]; then
     echo "error: enter filename to transform"
     #for f in `git diff --name-only`; do echo $f--; done
+    #git diff --name-only HEAD
     exit 1
 fi
 
@@ -24,10 +32,9 @@ for transform in `ls ${TRANSFORM_DIR}/*.js`; do
 done
 
 # All the flavours of destructure-functions
-jscodeshift -t ./transforms/destructure-functions.js --decl=1 ${FILE}
-jscodeshift -t ./transforms/destructure-functions.js --decl=1 --state=1 ${FILE}
-jscodeshift -t ./transforms/destructure-functions.js --arrow=1 --state=1 ${FILE}
-jscodeshift -t ./transforms/destructure-functions.js --arrow=1 --state=0 ${FILE}
+jscodeshift -t ${TRANSFORM_DIR}/destructure-functions.js --arrow=1 --state=1 ${FILE}
+jscodeshift -t ${TRANSFORM_DIR}/destructure-functions.js --arrow=1 --state=0 ${FILE}
+jscodeshift -t ${TRANSFORM_DIR}/destructure-functions.js --state=1 ${FILE}
 
 type eslint > /dev/null
 if [ $? -eq 0 ]; then
