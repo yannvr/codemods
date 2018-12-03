@@ -31,6 +31,8 @@ module.exports = function(file, api, options) {
   const hasFunctionParams = (paramName, p) =>
     p.value.params && p.value.params[0] && p.value.params[0].name === paramName
 
+  const isNotConstructor = p => p.parentPath.value.kind !== "constructor"
+
   const replaceParamWithProps = p => {
     propToReplace = p.value.params[0]
     propToReplace.name = []
@@ -52,6 +54,7 @@ module.exports = function(file, api, options) {
   return root
     .find(j.Function)
     .filter(p => hasFunctionParams(propName, p))
+    .filter(p => isNotConstructor(p))
     .forEach(p => replaceParamWithProps(p))
     .toSource({ trailingComma: true })
 }
