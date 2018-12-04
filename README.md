@@ -48,6 +48,7 @@ jscodeshift globally `npm -g i jscodeshift`
 
 - More tests for `destructure-components` so it can handle larger project migration
 - Make `destructure-components` safer (but still useful)
+- Check shadow props
 - Remove unused arguments
 - Make a transformation that makes the code bug free
 - Reclaim your life by making more useful transforms and be happy

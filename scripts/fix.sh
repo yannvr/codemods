@@ -27,6 +27,9 @@ while [ "$1" != "" ]; do
             usage
             exit
             ;;
+        --safe)
+            SAFE=1
+            ;;
         --no-eslint)
             NO_ESLINT=1
             ;;
@@ -45,15 +48,21 @@ echo "Transforming ${FILE}..."
 # Only transformations suitable for React are applied here. Other transformations
 # can be destructive for React/JSX files
 
-# basic transformations
 jscodeshift -t ${TRANSFORM_DIR}/remove-debugger.js ${FILE}
 jscodeshift -t ${TRANSFORM_DIR}/remove-logs.js ${FILE}
-jscodeshift -t ${TRANSFORM_DIR}/destructure-components.js ${FILE}
-# All the flavours of destructure-functions
-jscodeshift -t ${TRANSFORM_DIR}/destructure-functions.js ${FILE}
-jscodeshift -t ${TRANSFORM_DIR}/destructure-functions.js --arrow=1 --state=1 ${FILE}
-jscodeshift -t ${TRANSFORM_DIR}/destructure-functions.js --arrow=1 --state=0 ${FILE}
-jscodeshift -t ${TRANSFORM_DIR}/destructure-functions.js --state=1 ${FILE}
+
+if [ -z "${SAFE}" ]; then
+    echo "ALL TRANSFORMS"
+    # basic transformations
+    jscodeshift -t ${TRANSFORM_DIR}/destructure-components.js ${FILE}
+    # All the flavours of destructure-functions
+    jscodeshift -t ${TRANSFORM_DIR}/destructure-functions.js ${FILE}
+    jscodeshift -t ${TRANSFORM_DIR}/destructure-functions.js --arrow=1 --state=1 ${FILE}
+    jscodeshift -t ${TRANSFORM_DIR}/destructure-functions.js --arrow=1 --state=0 ${FILE}
+    jscodeshift -t ${TRANSFORM_DIR}/destructure-functions.js --state=1 ${FILE}
+fi
+
+
 
 echo "Transformations applied to ${FILE}"
 
