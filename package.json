@@ -22,7 +22,8 @@
     "transform": "./scripts/transform.sh"
   },
   "bin": {
-    "fix": "./scripts/transform.sh"
+    "fix-staged": "./scripts/fix-staged.sh",
+    "fix": "./scripts/fix.sh"
   },
   "jest": {
     "globals": {
