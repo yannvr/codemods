@@ -1,5 +1,6 @@
 /**
  *  Remove useless arrow function block statements
+ *  Note that this is one is autofixed by ESLINT so you might not need it
  */
 export default (fileInfo, api) => {
   const j = api.jscodeshift
