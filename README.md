@@ -15,7 +15,7 @@ The app comes with a binary that so you won't even need to install another depen
 
 You can now [apply transformation individually](https://github.com/yannvr/codemods#individuals-transformation)
 
-Follow the next steps to apply holistic transformation ([unlock the magic `fix` command](https://github.com/yannvr/codemods#holistic-transformation)
+Follow the next steps to apply holistic transformation ([unlock the magic `fix` command](https://github.com/yannvr/codemods#holistic-transformation))
 
 - `npm link`
 - go to your repo (where you want to apply transformations) and `npm link jscodemods`
