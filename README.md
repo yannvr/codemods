@@ -15,7 +15,7 @@ The app comes with a binary that so you won't even need to install another depen
 
 You can now [apply transformation individually](https://github.com/yannvr/codemods#individuals-transformation)
 
-Follow the next steps to apply them on your repo:
+Follow the next steps to apply holistic transformation ([unlock the magic `fix` command](https://github.com/yannvr/codemods#holistic-transformation)
 
 - `npm link`
 - go to your repo (where you want to apply transformations) and `npm link jscodemods`
@@ -38,6 +38,16 @@ Follow the next steps to apply them on your repo:
   - `--state=1`: to destructure the property `state` rather than props
   - `--arrow=1`: target arrow function for destructuring. Works only if no extra parentheses are used on function paramaters.
     See `transforms/__tests_/destructure-functions.test.js` for examples
+
+### Holistic transformation
+
+`fix`: transforms all your staged files before commit.
+
+Turns out it is quite destructive (no pun) so you can
+rather do `fix --safe` which does code cleanup only.
+
+After trials on projects, I found that using unsafe fix does the destructuring you're after but requires you
+to review each files. Still saving you time and making you happier.
 
 ### Individuals transformation
 
