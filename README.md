@@ -41,10 +41,11 @@ Follow the next steps to apply holistic transformation ([unlock the magic `fix` 
 
 ### Holistic transformation
 
-`fix`: transforms all your staged files before commit.
+- `fix-staged`: transforms all your staged files before commit
+- `fix [file]`: transforms specific file
 
 Turns out it is quite destructive (no pun) so you can
-rather do `fix --safe` which does code cleanup only.
+rather pass `--safe` which does code cleanup only.
 
 After trials on projects, I found that using unsafe fix does the destructuring you're after but requires you
 to review each files. Still saving you time and making you happier.

@@ -43,6 +43,7 @@ if [ "$1" ==  "test" ]; then
         TRANSFORM_DIR="./node_modules/jscodemods/transforms"
 fi
 
+echo "TRANSOFRM DIR ${TRANSFORM_DIR}"
 echo "Transforming ${FILE}..."
 
 # Only transformations suitable for React are applied here. Other transformations
