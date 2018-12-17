@@ -41,7 +41,7 @@ Follow the next steps to apply holistic transformation ([unlock the magic `fix` 
 
 ### Holistic transformation
 
-- `fix-staged`: transforms all your staged files before commit
+- **`fix-staged`**: transforms all your staged files before commit
 - `fix [file]`: transforms specific file
 
 Turns out it is quite destructive (no pun) so you can
